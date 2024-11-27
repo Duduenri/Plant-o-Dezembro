@@ -1,5 +1,6 @@
-import pandas as pd
+import pandas as pd # type: ignore
 from datetime import datetime, timedelta
+import random
 
 # Lista de pessoas
 pessoas = ["Bianca", "Carol", "Claudio", "Franer", "Illie", "Luciana", "Marcio", "Martini", "Neto", "Rafael"]
@@ -23,6 +24,7 @@ calendario_df = pd.DataFrame(columns=["Data", "Turno", "Pessoa"])
 def distribuir_plantoes(datas, pessoas):
     plantao_manha = []
     plantao_tarde = []
+    random.shuffle(pessoas)  # Embaralhar a lista de pessoas
     index_pessoa = 0
 
     for data in datas:
